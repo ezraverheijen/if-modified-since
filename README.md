@@ -40,3 +40,18 @@ add_action( 'template_redirect', function() {
     new IfModifiedSince( $timestamp );
 } );
 ```
+
+### Example 3 (Kirby):
+
+1. Copy the `if-modified-since` folder into site/plugins
+2. Add the following line of code to site/snippets/header.php
+
+```php
+<?php new IfModifiedSince($page->modified()) ?>
+<!DOCTYPE html>
+<html>
+<head>
+// rest of the page
+```
+
+That's it!
