@@ -25,7 +25,7 @@ class IfModifiedSince
     public function __construct($mtime)
     {
         if (empty($mtime) || !$this->isValidUnixTimestamp($mtime)) {
-            return null;
+            throw new Exception('Missing or invalid timestamp');
         }
         
         $this->setHeaders((int) $mtime);
