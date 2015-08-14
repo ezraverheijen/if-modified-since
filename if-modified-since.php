@@ -43,7 +43,12 @@ class IfModifiedSince
         if (isset($_SERVER['HTTP_IF_MODIFIED_SINCE']) &&
             strtotime($_SERVER['HTTP_IF_MODIFIED_SINCE']) >= $mtime)
         {
-            http_response_code(304);
+            if (function_exists('http_response_code')) {
+                http_response_code(304);
+            } else {
+                header($this->getHttpProtocol() . ' 304 Not Modified');
+            }
+            
             exit;
         }
     }
@@ -58,5 +63,10 @@ class IfModifiedSince
     {
         return (ctype_digit($timestamp) &&
                 strtotime(date('d-m-Y H:i:s', $timestamp)) === (int) $timestamp);
+    }
+    
+    public function getHttpProtocol()
+    {
+        return (!empty($_SERVER['SERVER_PROTOCOL'])) ? $_SERVER['SERVER_PROTOCOL'] : 'HTTP/1.1';
     }
 }
