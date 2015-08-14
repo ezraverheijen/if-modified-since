@@ -4,13 +4,6 @@ PHP class to handle the `If Modifed Since` functionality as described [here](htt
 
 Requires PHP >= 5.4
 
-If you're using a PHP version lower than 5.4 replace `http_response_code(304)` in the `setHeaders()` method with:
-
-```php
-$protocol = isset($_SERVER['SERVER_PROTOCOL']) ? $_SERVER['SERVER_PROTOCOL'] : 'HTTP/1.0';
-header($protocol . ' 304 Not Modified');
-```
-
 **NOTE**: This code always needs to run before ANY other output!
 
 ### Example 1:
