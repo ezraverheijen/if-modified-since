@@ -2,8 +2,6 @@
 
 PHP class to handle the `If Modifed Since` functionality as described [here](https://www.feedthebot.com/ifmodified.html).
 
-Requires PHP >= 5.4
-
 **NOTE**: This code always needs to run before ANY other output!
 
 ### Example 1:
