@@ -34,12 +34,12 @@ class IfModifiedSince
     /**
      * Output the `Modified` headers
      * 
+     * @uses http_response_code() if available (PHP >= 5.4)
+     * 
      * @param int $mtime Unix timestamp the resource was last modified
      */
     public function setHeaders($mtime)
     {
-        header('Last-Modified: ' . gmdate('D, d M Y H:i:s', $mtime) . ' GMT');
-        
         if (isset($_SERVER['HTTP_IF_MODIFIED_SINCE']) &&
             strtotime($_SERVER['HTTP_IF_MODIFIED_SINCE']) >= $mtime)
         {
@@ -50,6 +50,8 @@ class IfModifiedSince
             }
             
             exit;
+        } else {
+            header('Last-Modified: ' . gmdate('D, d M Y H:i:s', $mtime) . ' GMT');
         }
     }
     
