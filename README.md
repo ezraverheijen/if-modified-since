@@ -45,4 +45,7 @@ add_action( 'template_redirect', function() {
 // rest of the page
 ```
 
+Please not that this won't work if you have caching enabled in Kirby.
+
+
 That's it!
