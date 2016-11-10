@@ -1,6 +1,6 @@
 # If-Modified-Since
 
-![Version](https://img.shields.io/badge/version-1.1.0-green.svg) ![License](https://img.shields.io/badge/license-MIT-green.svg) ![PHP Version](https://img.shields.io/badge/PHP-5.4%2B-red.svg)
+![Version](https://img.shields.io/badge/version-1.2.0-green.svg) ![License](https://img.shields.io/badge/license-MIT-green.svg) ![PHP Version](https://img.shields.io/badge/PHP-5.4%2B-red.svg)
 
 *Version 1.1.0*
 
@@ -41,6 +41,10 @@ add_action( 'template_redirect', function() {
 ```
 
 ## Changelog
+
+**1.2.0**
+
+- Added namespace
 
 **1.1.0**
 
