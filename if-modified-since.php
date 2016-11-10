@@ -1,4 +1,7 @@
 <?php
+namespace EzraVerheijen\Classes;
+
+use \Exception;
 
 /**
  * If-Modified-Since

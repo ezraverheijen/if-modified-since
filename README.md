@@ -16,6 +16,8 @@ PHP class to handle the `If-Modifed-Since` functionality as described [here](htt
 <?php
 require 'if-modified-since.php';
 
+use EzraVerheijen\Classes\IfModifiedSince;
+
 $timestamp = filemtime(__FILE__);
 new IfModifiedSince($timestamp);
 ?>
@@ -34,7 +36,7 @@ require 'if-modified-since.php';
 add_action( 'template_redirect', function() {
     global $post;
     $timestamp = get_post_modified_time( 'U', false, $post->ID );
-    new IfModifiedSince( $timestamp );
+    new EzraVerheijen\Classes\IfModifiedSince( $timestamp );
 } );
 ```
 
